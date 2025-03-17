@@ -1,0 +1,281 @@
+:root {
+    --redColor: #ea4d44;
+    --yellowColor: #ffc433;
+    --fontColor: #222;
+    --whiteColor: #fff;
+    --greyColor: #f5f5f5;
+    --darkGreyColor: #c4c4c4;
+    --blueColor: #03a9f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh; /*Ensures the body takes the full width and height of the viewport.*/
+    font-family: 'Lato', sans-serif;
+    background-image: url('productsbackground.JPG');
+    background-size: cover;
+}
+
+.navbar {
+    display: flex; /* Creates a flex container with space between items (for navigation items and any other content).*/
+    width: 100%;
+    height: 60px;
+    padding: 0 3%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    position: fixed;
+    top: 0; /* Fixes the navbar at the top of the page.*/
+    left: 0;
+    background-color: rgb(184, 94, 184);
+}
+
+.menu {
+    display: flex;
+    gap: 5px;
+}
+
+.menu-user, .menu-cart {
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--whiteColor);
+    color: var(--fontColor);
+    cursor: pointer;
+}
+
+.menu-user:hover, .menu-cart:hover {
+    background-color: var(--blueColor); /*  effects change the background to --blueColor and text to white. */
+    color: var(--whiteColor);
+}
+
+.cart-count {
+    background-color: var(--blueColor);
+    border-radius: 10px; /* Rounds the corners. */
+    padding: 5% 10%;
+    margin-left: 5px;
+    font-size: 10px;
+    color: var(--whiteColor);
+}
+
+.container {
+    display: flex; /* Flexbox is used for layout. */
+    margin-top: 60px; /* Provides space to accommodate the fixed navbar. */
+}
+
+.main {
+    flex-grow: 1;
+    height: max-content;
+    padding: 0 3%;
+    margin-right: 350px;
+}
+
+.product-wrapper { /*used to display a grid of products. */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.2rem; /* Adds spacing between grid items. */
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--greyColor);
+    border-radius: 8px; /* Rounds the corners of the product card. */
+    padding: 10px; /*  controls the space inside an element */
+    box-shadow: rgba(17,17,26,0.05) 0px 1px 0px, rgba(17,17,26,0.1) 0px 0px 8px;
+   /*  Adds a light shadow for a subtle 3D effect. */
+}
+
+.product-img { /*Ensures the image fits within the box without distortion.*/
+    width: auto; /* makes sure the image's width adjusts automatically based on the aspect ratio and content */
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #97deff;
+}
+
+.product-title {
+    font-size: 16px;
+}
+
+.product-price {
+    font-size: 14px;
+}
+
+.add-to-cart {
+    background-color: rgba(184, 94, 184);
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: var(--yellowColor);
+    color: var(--fontColor);
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 350px;
+    height: calc(100% - 80px); /* allows you to perform calculations to determine the height. */
+    position: fixed;
+    top:0; /* This positions an element at the very top of its positioned container */
+    right: 20; /* positions the element 20px away from the right side of its positioned container */
+    background-color: var(--blueColor);
+    color: var(--whiteColor);
+    border-radius: 8px;
+    margin-top: 60px;
+    padding: 1%;
+}
+
+.cart-title {
+    letter-spacing: 1; /* controls the space between characters in a text. */
+    line-height: 2; /* sets the amount of space between lines of text.  */
+}
+
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    overflow-y: auto;
+    padding: 0 2% 2% 0;
+    color: var(--fontColor);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 3%;
+    margin: 2% 0;
+    border-radius: 8px;
+    background-color: var(--greyColor);
+    width: 100%;
+    font-size: 13px;
+}
+
+.cart-item-img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+}
+
+.cart-item-title {
+    min-width: 10px;
+    max-width: 15ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.change-quantity {
+    border: none;
+    background-color: var(--blueColor);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.cart-item-price {
+    font-weight: 700;
+}
+
+.cart-item-remove {
+    border: none;
+    background-color: transparent;
+    color: var(--darkGreyColor);
+    cursor: pointer;
+}
+
+.cart-item-remove:hover {
+    color: var(--redColor);
+}
+
+.cart-empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--fontColor);
+}
+
+.cart-empty img {
+    width: 50%;
+    height: 50%;
+}
+
+
+.divider {
+    border: none;
+    height: 2px;
+    background-color: var(--greyColor);
+}
+
+.cart-action {
+    margin-top: 10px;
+}
+
+.cart-amount {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#final-price {
+    font-weight: 700;
+    color: var(--fontColor);
+}
+
+.cart-btn {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: var(--redColor);
+    color: var(--whiteColor);
+    font-weight: 700;
+    letter-spacing: 1;
+    cursor: pointer;
+}
+
+.collapsed {
+    width: 0;
+    display: none;
+}
+
+.expanded {
+    margin-right: 0;
+}
+

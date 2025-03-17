@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="products.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Product Page</title>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar">
+        <h2 class="logo">Product Cart</h2>
+        <div class="menu">
+            <button class="menu-user"><i class="fa-solid fa-user"></i></button>
+            <button class="menu-cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count">0</span></button>
+        </div>
+    </div>
+
+    <!-- container -->
+    <div class="container">
+        <!-- main -->
+        <div class="main">
+            <div class="product-wrapper">
+                <div class="product" data-product="1">
+                    <img class="product-img" src="fruity.JPG" alt="macarons">
+                    <h3 class="product-title">Fruity Peebles Flavored Macarons</h3>
+                    <p class="product-price">$5.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product" data-product="2">
+                    <img class="product-img" src="strawberry.JPG" alt="macarons">
+                    <h3 class="product-title">Strawberry Macarons</h3>
+                    <p class="product-price">$4.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product" data-product="3">
+                    <img class="product-img" src="chocolate.JPG" alt="macarons">
+                    <h3 class="product-title">Chocolate Macarons</h3>
+                    <p class="product-price">$3.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product" data-product="4">
+                    <img class="product-img" src="cpbJPG.JPG" alt="macarons">
+                    <h3 class="product-title">Chocolate Peanut Butter Macarons</h3>
+                    <p class="product-price">$3.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product" data-product="5">
+                    <img class="product-img" src="jelly-macaronsJPG-1.JPG" alt="macarons">
+                    <h3 class="product-title">Jelly Macarons</h3>
+                    <p class="product-price">$4.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                
+            </div>
+        </div>
+        <!-- cart -->
+        <div class="cart">
+            <h3 class="cart-title">Your Cart</h3>
+            <div class="cart-list">
+                <!-- this is for list of item on the cart. We will add the structure of html in the app.js later -->
+            </div>
+            <hr class="divider">
+            <div class="cart-action">
+                <div class="cart-amount" id="total-price">
+                    <span>Subtotal</span>
+                    <span class="cart-amount-value">$0.00</span>
+                </div>
+                <div class="cart-amount" id="tax">
+                    <span>Tax included (10%)</span>
+                    <span class="cart-amount-value">$0.00</span>
+                </div>
+                <div class="cart-amount" id="final-price">
+                    <span>Total</span>
+                    <span class="cart-amount-value">$0.00</span>
+                </div>
+                <a href="checkout.html">
+                <button class="cart-btn">Checkout</button>
+            </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="products.js"></script>
+</html>
+
+
